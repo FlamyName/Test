@@ -1,0 +1,60 @@
+﻿<Window x:Class="Test.Windows.MasterWindow.MasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test.Windows.MasterWindow"
+        mc:Ignorable="d"
+        Title="MasterWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="147*"/>
+            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <TextBlock>
+                Номера обрабатываемых заказов
+            </TextBlock>
+            <ListView BorderThickness="2" BorderBrush="Black"   Foreground="Black" Name="lb_orders_master" Loaded="lb_orders_master_Loaded" Height="200" ScrollViewer.HorizontalScrollBarVisibility="Visible" >
+                <ListView.View >
+                    <GridView >
+                        <GridViewColumn  DisplayMemberBinding="{Binding Path=Id}">Номер Заказа</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Phone}">Телефон</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Margin="5" Name="btn_desp_order" Click="btn_desp_order_Click">
+                Подробнее
+            </Button>
+            <Button Margin="5" Name="btn_in_process" Click="btn_in_process_Click">
+                Выполнять заказ
+            </Button>
+            <Button Margin="5" Name="btn_complete" Click="btn_complete_Click">
+                Выполнено
+            </Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <TextBlock Margin="5">
+                Номер заказов в процессе выполнения
+            </TextBlock>
+            <ListBox Name="lb_orders_in_process" Loaded="lb_orders_in_process_Loaded" Height="200" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=Id}">
+                            </TextBlock>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>

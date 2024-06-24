@@ -1,0 +1,74 @@
+﻿<Window x:Class="Test.Windows.ManagerWindow.AddOrderClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test.Windows.ManagerWindow"
+        mc:Ignorable="d"
+        Title="AddOrderClient" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="338*"/>
+            <ColumnDefinition Width="215*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+
+            <StackPanel Margin="5">
+                <TextBlock>
+                    Фио
+                </TextBlock>
+                <TextBox Name="tb_fullname_client">
+                
+                </TextBox>
+                
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock>
+                    Телефон
+                </TextBlock>
+                <TextBox Name="tb_phone_client">
+
+                </TextBox>
+
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock>
+                    Оборудование
+                </TextBlock>
+                <TextBox TextWrapping="Wrap" Height="100" Name="tb_device_client">
+
+                </TextBox>
+
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel Margin="5">
+                <TextBlock>
+                    Проблема
+                </TextBlock>
+                <TextBox TextWrapping="Wrap" Height="150" Name="tb_problem_client">
+
+                </TextBox>
+
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <TextBlock Margin="5">
+                Выбрать мастера
+            </TextBlock>
+            <ComboBox Margin="5" Name="cb_masters" Loaded="cb_masters_Loaded">
+                
+            </ComboBox>
+            
+            <Button Margin="5" Name="btn_add_order_client" Click="btn_add_order_client_Click">
+                Добавить
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
